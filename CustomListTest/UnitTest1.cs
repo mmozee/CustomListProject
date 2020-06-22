@@ -38,8 +38,57 @@ namespace CustomListTest
 
             //Assert
             Assert.AreEqual(indexexpectedValue, ourCustomList.capacity);
+
         }
-        
+        public void DidFirstItemGoToIndexZero()
+        {
+            //Arrange
+            CustomList<int> ourCustomList = new CustomList<int>();
+            int expectedValue = 6;
+            int value;
+
+            //Act
+            ourCustomList.Add(6);
+            value = ourCustomList[0];
+
+            //Assert
+            Assert.AreEqual(expectedValue, value);
+        }
+        public void AfterFifthAddDidCountIncreaseCorrectly()
+        {
+            //Arrange
+            CustomList<int> ourCustomList = new CustomList<int>();
+            int countExpectedValue = 5;
+
+            //Act
+            ourCustomList.Add(6);
+            ourCustomList.Add(8);
+            ourCustomList.Add(12);
+            ourCustomList.Add(32);
+            ourCustomList.Add(7);
+
+
+            //Assert
+            Assert.AreEqual(countExpectedValue, ourCustomList.count);
+        }
+        public void IsTheThirdIndexValueCorrectAfterIncreasingCapacity()
+        {
+            //Arrange
+            CustomList<int> ourCustomList = new CustomList<int>();
+            int indexexpectedValue = 32;
+            int value;
+
+            //Act
+            ourCustomList.Add(6);
+            ourCustomList.Add(8);
+            ourCustomList.Add(12);
+            ourCustomList.Add(32);
+            ourCustomList.Add(7);
+            value = ourCustomList[3];
+
+            //Assert
+            Assert.AreEqual(indexexpectedValue, value);
+        }
 
     }
 }
