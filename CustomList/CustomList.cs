@@ -31,7 +31,7 @@ namespace CustomList
         {
 
         }
-        public void Remove()
+        public void Remove(T item)
         {
 
         }

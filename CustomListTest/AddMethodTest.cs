@@ -7,7 +7,7 @@ using CustomList;
 namespace CustomListTest
 {
     [TestClass]
-    public class UnitTest1
+    public class AddMethodTest
     {
         [TestMethod]
         public void DidCountChangeToReflectNewItemAdded()
@@ -22,6 +22,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedValue, ourCustomList.count);
         }
+        [TestMethod]
         public void WasIndexIncreasedAfterFifthItemWasAdded()
         {
             //Arrange
@@ -40,6 +41,7 @@ namespace CustomListTest
             Assert.AreEqual(indexexpectedValue, ourCustomList.capacity);
 
         }
+        [TestMethod]
         public void DidFirstItemGoToIndexZero()
         {
             //Arrange
@@ -54,6 +56,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedValue, value);
         }
+        [TestMethod]
         public void AfterFifthAddDidCountIncreaseCorrectly()
         {
             //Arrange
@@ -71,6 +74,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(countExpectedValue, ourCustomList.count);
         }
+        [TestMethod]
         public void IsTheThirdIndexValueCorrectAfterIncreasingCapacity()
         {
             //Arrange
@@ -89,6 +93,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(indexexpectedValue, value);
         }
+       
 
     }
 }
