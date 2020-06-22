@@ -10,8 +10,19 @@ namespace CustomListTest
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void DidCountChangeToReflectNewItemAdded()
         {
+            //Arrange
+            CustomList<int> ourCustomList = new CustomList<int>();
+            int expectedValue = 1;
+
+            //Act
+            ourCustomList.Add(6);
+
+            //Assert
+            Assert.AreEqual(expectedValue, ourCustomList.count);
         }
+      
+
     }
 }
