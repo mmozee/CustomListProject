@@ -13,23 +13,28 @@ namespace CustomListTest
     {
         [TestMethod]
 
-        public void DoesIntValueConvertToString()
+        public void DidTheBoolValueConvertToAString()
         {
             //Arrange - member variable
-            CustomList<int> ourList = new CustomList<int>();
-            ourList.Add(6);
-            ourList.Add(8);
-            ourList.Add(12);
-            ourList.Add(32);
-            ourList.Add(7);
+            CustomList<bool> ourList = new CustomList<bool>();
+            ourList.Add(true);
+            ourList.Add(false);
+            ourList.Add(true);
+           
+
+            string converted;
+            string expectation = "truefalsetrue";
+
             //Act - Constructor
-            string expectation = "12";
-            string converted = ourList.ToString(ourList[2]);
+            converted = ourList.ToString().ToLower();
+
 
             //Assert - Are Equal
             Assert.AreEqual(expectation, converted);
 
         }
+
+        [TestMethod]
         public void DoesMethodTakeEachValueOfTheList() 
         {
             //Arrange
@@ -39,34 +44,26 @@ namespace CustomListTest
             ourList.Add(12);
             ourList.Add(32);
             ourList.Add(7);
+
             //Act
             string expectation = "6812327";
-            string converted = "";
-            for (int i = 0; i < ourList.count; i++)
-            {
-                converted += ourList[i];
-            }
-
+            string converted = ourList.ToString();
+            
             //Assert
             Assert.AreEqual(expectation, converted);
         }
-        public void IsTheReturnValueCorrect()
-        {
-            //Arrange
-            CustomList<int> ourList = new CustomList<int>();
-            ourList.Add(6);
-            ourList.Add(8);
-            ourList.Add(12);
-            ourList.Add(32);
-            ourList.Add(7);
+        //public void IsTheReturnValueCorrect()
+        //{
+        //    //Arrange
 
-            //Act
-            string expected = "32";
-            int converted = ourList[3];
 
-            //Assert
-            Assert.AreEqual(expected, converted);
 
-        }
+        //    //Act
+
+        //    Console.WriteLine();
+        //    //Assert
+        //    Assert.AreEqual(expected, converted);
+
+        
     }
 }

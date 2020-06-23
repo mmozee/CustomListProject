@@ -93,19 +93,16 @@ namespace CustomList
              }
             return itemInTheList;
         }
-        public string Name
+                        
+        public override string ToString()
         {
-            get
+            string convertedString = "";
+            for (int i = 0; i < count; i++)
             {
+                convertedString += items[i];
             }
-            set
-            {
 
-            }
-                
-        public override string ToString(T item)
-        {
-            return;
+            return convertedString;
 
         }
 
