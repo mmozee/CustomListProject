@@ -12,7 +12,7 @@ namespace CustomList
         // count - has how many items
         // capacity - how many items can fit in list
 
-        public T[] customList;         
+        public T[] items;         
         public int count;
         public int capacity;
 
@@ -22,17 +22,17 @@ namespace CustomList
             {
                 if (index < 0 || index >= count)
                 {
-                    throw new IndexOutOfRangeException("Index out of range");
+                    throw new ArgumentOutOfRangeException("Index out of range");
                 }
-                return customList[index];
+                return items[index];
             }
             set
             {
                 if (index < 0 || index >= count)
                 {
-                    throw new IndexOutOfRangeException("Index out of range");
+                    throw new ArgumentOutOfRangeException("Index out of range");
                 }
-                customList[index] = value;
+                items[index] = value;
             }
         }
 
@@ -40,23 +40,64 @@ namespace CustomList
 
         public CustomList()
         {
-            capacity = 4; 
-            customList = new T[capacity];
+            capacity = 4;
+            items = new T[capacity];
             count = 0;
         }
 
         // member methods - Can Do
 
+            //OurCustomList
+            //ourCustomList.Add(6);0
+            //ourCustomList.Add(8);1
+            //ourCustomList.Add(12);2
+            //ourCustomList.Add(32);3
+            //ourCustomList.Add(7);4
         public void Add(T item)
         {
-            T[] customList = new T[capacity];
-
-            for (int i = 0; i < count; i++)
+            if(count==capacity)
             {
+                T[] tempArray = new T[capacity *= 2];
 
+                for (int i = 0; i < count; i++)
+                {
+                    tempArray[i] = items[i];
+
+                }
+
+                items = tempArray;
+               
             }
+          
+            items[count] = item;
+            count++;
+            
+
+
+
+            //it will take the item
+            
+            //an array will be created
+            //increase the counter
+            //give it an index
             
            
+
+            //T[] temporaryList;                                      
+            ////if (count == capacity)                                   //if capacity is reached
+            //{
+            //    //capacity = capacity * 2;                             //increase capacity
+            //    //temporaryList = new T[capacity];                     
+
+            //    for (int i = 2; i < count; i++)                      //put it into the CustomList
+            //    {
+            //        CustomList] = customList[i];
+            //    }
+            //}
+
+
+
+
         }
         public void Remove(T item)
         {
