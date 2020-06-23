@@ -47,12 +47,6 @@ namespace CustomList
 
         // member methods - Can Do
 
-            //OurCustomList
-            //ourCustomList.Add(6);0
-            //ourCustomList.Add(8);1
-            //ourCustomList.Add(12);2
-            //ourCustomList.Add(32);3
-            //ourCustomList.Add(7);4
         public void Add(T item)
         {
             if(count==capacity)
@@ -71,38 +65,42 @@ namespace CustomList
           
             items[count] = item;
             count++;
-            
+        }
 
 
+        //ourCustomList.Add(6);
+        //ourCustomList.Add(8);
+        //ourCustomList.Add(32);
+        //ourCustomList.Add(7);
+        
 
-            //it will take the item
-            
-            //an array will be created
-            //increase the counter
-            //give it an index
-            
+        public bool Remove(T item)
+        {
+            bool itemInTheList = false;
+            for (int i = 0; i < count; i++)
+            {
+                if (items[i].Equals(item))
+                {
+                    itemInTheList = true;
+                    count--;
+                    for (int j = i; j < count; j++)
+                    {
+                        items[j] = items[j + 1];
+                    }
+
+                    break;
+                } 
+             }
+            return itemInTheList;
+        }
            
 
-            //T[] temporaryList;                                      
-            ////if (count == capacity)                                   //if capacity is reached
-            //{
-            //    //capacity = capacity * 2;                             //increase capacity
-            //    //temporaryList = new T[capacity];                     
+            // find the item in the array
+            // if item in the array return true
+            // if the item is not in the array return false
+            // remove from the array
 
-            //    for (int i = 2; i < count; i++)                      //put it into the CustomList
-            //    {
-            //        CustomList] = customList[i];
-            //    }
-            //}
-
-
-
-
-        }
-        public void Remove(T item)
-        {
-
-        }
+        
 
     }
 }
