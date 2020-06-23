@@ -7,14 +7,34 @@ using System.Threading.Tasks;
 namespace CustomList
 {
     public class CustomList<T>
-    {
-        private T[] customList; 
-        // member variables - Has A
+    {// member variables - Has A
         // index [] - where each item is located
         // count - has how many items
         // capacity - how many items can fit in list
+
+        public T[] customList;         
         public int count;
         public int capacity;
+
+        public T this[int index]    // Indexer declaration  
+        {
+           get
+            {
+                if (index < 0 || index >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                return customList[index];
+            }
+            set
+            {
+                if (index < 0 || index >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                customList[index] = value;
+            }
+        }
 
         // constructor - Spawner
 
@@ -29,7 +49,14 @@ namespace CustomList
 
         public void Add(T item)
         {
+            T[] customList = new T[capacity];
 
+            for (int i = 0; i < count; i++)
+            {
+
+            }
+            
+           
         }
         public void Remove(T item)
         {
