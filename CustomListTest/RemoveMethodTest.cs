@@ -112,6 +112,27 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedValue, isItemInList);
         }
+        [TestMethod]
+        public void SeeIfListIsAdjustedByOneIfAllValuesAreTheSame()
+        {
+            //Arrange
+            CustomList<int> ourCustomList = new CustomList<int>();
+            ourCustomList.Add(5);
+            ourCustomList.Add(5);
+            ourCustomList.Add(5);
+            ourCustomList.Add(5);
+            int isItemInList;
+            int expectedValue = 3;
+
+            //Act
+            ourCustomList.Remove(5);
+
+            isItemInList = ourCustomList.count;
+
+
+            //Assert
+            Assert.AreEqual(expectedValue, isItemInList);
+        }
     }
 
 }

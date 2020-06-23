@@ -93,14 +93,26 @@ namespace CustomList
              }
             return itemInTheList;
         }
-           
+        public string Name
+        {
+            get
+            {
+            }
+            set
+            {
 
-            // find the item in the array
-            // if item in the array return true
-            // if the item is not in the array return false
-            // remove from the array
+            }
+                
+        public override string ToString(T item)
+        {
+            return;
 
-        
+        }
+
+
+
+
+
 
     }
 }
