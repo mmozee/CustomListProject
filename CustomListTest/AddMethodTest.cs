@@ -20,7 +20,7 @@ namespace CustomListTest
             ourCustomList.Add(6);
 
             //Assert
-            Assert.AreEqual(expectedValue, ourCustomList.count);
+            Assert.AreEqual(expectedValue, ourCustomList.Count);
         }
         [TestMethod]
         public void WasIndexIncreasedAfterFifthItemWasAdded()
@@ -38,7 +38,7 @@ namespace CustomListTest
 
 
             //Assert
-            Assert.AreEqual(indexexpectedValue, ourCustomList.capacity);
+            Assert.AreEqual(indexexpectedValue, ourCustomList.Capacity);
 
         }
         [TestMethod]
@@ -72,7 +72,7 @@ namespace CustomListTest
 
 
             //Assert
-            Assert.AreEqual(countExpectedValue, ourCustomList.count);
+            Assert.AreEqual(countExpectedValue, ourCustomList.Count);
         }
         [TestMethod]
         public void IsTheThirdIndexValueCorrectAfterIncreasingCapacity()

@@ -45,7 +45,7 @@ namespace CustomListTest
 
 
             //Assert
-            Assert.AreEqual(countExpectedValue, ourCustomList.count);
+            Assert.AreEqual(countExpectedValue, ourCustomList.Count);
         }
         [TestMethod]
         public void DoesTheItemsShiftAfterRemovingItemFromTheMiddle()
@@ -127,7 +127,7 @@ namespace CustomListTest
             //Act
             ourCustomList.Remove(5);
 
-            isItemInList = ourCustomList.count;
+            isItemInList = ourCustomList.Count;
 
 
             //Assert

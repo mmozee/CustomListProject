@@ -13,14 +13,30 @@ namespace CustomList
         // capacity - how many items can fit in list
 
         public T[] items;         
-        public int count;
-        public int capacity;
+        private int count;
+        private int capacity;
+        public int Count 
+        { get 
+           
+            { 
+                return count;
+            } 
+        
+        }
+
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
 
         public T this[int index]    // Indexer declaration  
         {
            get
             {
-                if (index < 0 || index >= count)
+                if (index < 0 || index >= Count)
                 {
                     throw new ArgumentOutOfRangeException("Index out of range");
                 }
@@ -28,7 +44,7 @@ namespace CustomList
             }
             set
             {
-                if (index < 0 || index >= count)
+                if (index < 0 || index >= Count)
                 {
                     throw new ArgumentOutOfRangeException("Index out of range");
                 }
@@ -49,11 +65,11 @@ namespace CustomList
 
         public void Add(T item)
         {
-            if(count==capacity)
+            if(Count==Capacity)
             {
                 T[] tempArray = new T[capacity *= 2];
 
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < Count; i++)
                 {
                     tempArray[i] = items[i];
 
@@ -83,7 +99,7 @@ namespace CustomList
 
                     break;
                 } 
-             }
+            }
             return itemInTheList;
         }
                         
@@ -112,10 +128,18 @@ namespace CustomList
             }
 
             return result;
+        }                                             
+        
+        public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                listOne.Remove(listTwo[i]);
+            }
+
+            return listOne;            
         }
-            ////Overload + operator to add two list objects
-            //listOne = 6 + 8 + 12 + 32;
-            //listTwo =
+            
 
 
 
