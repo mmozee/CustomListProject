@@ -10,7 +10,7 @@ using CustomList;
 namespace CustomListTest
 {
     [TestClass]
-     public  class OverloadPlus
+     public  class OverloadPlusTest
      {
         [TestMethod]
 
