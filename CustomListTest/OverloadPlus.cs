@@ -33,7 +33,7 @@ namespace CustomListTest
             int value;
 
             //Act
-            result = new CustomList<int>();
+            result = listOne + listTwo;
             expected = listOne[0];
             value = result[0];
 
@@ -62,7 +62,7 @@ namespace CustomListTest
             int value;
 
             //Act
-            result = new CustomList<int>();
+            result = listOne + listTwo;
             expected = listTwo[0];
             value = result[4];
 
@@ -95,10 +95,12 @@ namespace CustomListTest
             expected.Add(4);
             expected.Add(57);
 
+            CustomList<int> result;
+
 
             //Act
-            CustomList<int> result = new CustomList<int>();
-                      
+            result = listOne + listTwo;
+                                 
 
             //Assert
             Assert.AreEqual(expected, result);
@@ -120,7 +122,7 @@ namespace CustomListTest
             listTwo.Add(4);
             listTwo.Add(57);
 
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result = listOne + listTwo;
             result.Add(6);
             result.Add(8);
             result.Add(12);
@@ -163,7 +165,7 @@ namespace CustomListTest
             listTwo.Add(4);
             listTwo.Add(57);
 
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result = listOne + listTwo;
             result.Add(6);
             result.Add(8);
             result.Add(12);

@@ -67,13 +67,6 @@ namespace CustomList
             count++;
         }
 
-
-        //ourCustomList.Add(6);
-        //ourCustomList.Add(8);
-        //ourCustomList.Add(32);
-        //ourCustomList.Add(7);
-        
-
         public bool Remove(T item)
         {
             bool itemInTheList = false;
@@ -103,9 +96,26 @@ namespace CustomList
             }
 
             return convertedString;
-
         }
+        public static CustomList<T> operator + (CustomList<T> listOne, CustomList<T> listTwo)
+        {   
+            CustomList<T> result = new CustomList<T>();
 
+            for (int i = 0; i < listOne.count; i++)
+            {
+                result.Add(listOne[i]);
+                                    
+            }
+            for (int i = 0; i < listTwo.count; i++)
+            {
+                result.Add(listTwo[i]);
+            }
+
+            return result;
+        }
+            ////Overload + operator to add two list objects
+            //listOne = 6 + 8 + 12 + 32;
+            //listTwo =
 
 
 
