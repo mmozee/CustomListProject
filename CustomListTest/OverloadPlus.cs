@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CustomList;
 using System.CodeDom;
+using CustomList;
 
 namespace CustomListTest
 {
     [TestClass]
-    class OverloadPlus
-    {
+     public  class OverloadPlus
+     {
         [TestMethod]
 
         public void DidMethodCaptureFirstValueOfTheFirstList()
@@ -103,7 +103,7 @@ namespace CustomListTest
                                  
 
             //Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
         [TestMethod]
