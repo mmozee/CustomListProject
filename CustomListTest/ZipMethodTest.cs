@@ -20,15 +20,14 @@ namespace CustomListTest
             listOne.Add(6);
             listOne.Add(8);
             listOne.Add(12);
-            listOne.Add(32);
-            listOne.Add(7);
+           
 
             listTwo.Add(3);
             listTwo.Add(4);
             listTwo.Add(57);
 
             int expectedValue;
-            int value;
+            CustomList<int> value;
             
 
             //Act
@@ -47,15 +46,14 @@ namespace CustomListTest
             listOne.Add(6);
             listOne.Add(8);
             listOne.Add(12);
-            listOne.Add(32);
-            listOne.Add(7);
+            
 
             listTwo.Add(3);
             listTwo.Add(4);
             listTwo.Add(57);
 
             int expectedValue;
-            int value;
+            CustomList<int> value;
 
 
             //Act
@@ -75,8 +73,7 @@ namespace CustomListTest
             listOne.Add(6);
             listOne.Add(8);
             listOne.Add(12);
-            listOne.Add(32);
-            listOne.Add(7);
+           
 
             listTwo.Add(3);
             listTwo.Add(4);
@@ -87,7 +84,7 @@ namespace CustomListTest
 
 
             //Act
-            expectedValue = "63841257327";
+            expectedValue = "63841257";
             value = listOne.Zip(listTwo);
 
 
@@ -140,16 +137,16 @@ namespace CustomListTest
             listTwo.Add(4);
             listTwo.Add(57);
 
-            int expectedValue;
-            int value;
+            string expectedValue;
+            CustomList<int> value;
 
 
             //Act
-            expectedValue = listTwo[2];
+            expectedValue = "57";
             value = listTwo.Zip(listOne);
 
             //Assert
-            Assert.AreEqual(expectedValue, value[4]);
+            Assert.AreEqual(expectedValue, value[4].ToString());
         }
 
 
